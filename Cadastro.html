@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SAE | Cadastro</title>
+
+    <!-- Estilo -->
+    <link rel="stylesheet" href="./src/css/style.css" />
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <header class="header">
+        <h1 class="title">Primeiro Acesso</h1>
+        <h2 class="subtitle registration">
+          Informe a sua matrícula para ser cadastrado no sistema para que
+          possamos completar seu cadastro.
+        </h2>
+      </header>
+
+      <section>
+        <form id="form-registration">
+          <div class="input-matricula-create-wrapper">
+            <label for="matricula-create"
+              >Mátricula <span id="obrigatorio">*</span></label
+            >
+            <input
+              type="number"
+              name="matricula-create"
+              id="matricula-create"
+              required
+            />
+          </div>
+          <div class="registration-wrapper">
+            <button type="submit" id="btn-registration">Cadastrar</button>
+          </div>
+        </form>
+      </section>
+
+      <footer class="footer">
+        <p>
+          © 2023 IFCE - Instituto Federal de Educação, Ciência e Tecnologia do
+          Ceará
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
