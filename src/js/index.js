@@ -1,13 +1,14 @@
-const alunoRadio = document.getElementById("aluno")
-const coordenadorRadio = document.getElementById("coordenador")
+const formSignIn = document.getElementById("form-sign-in")
 const matriculaInput = document.getElementById("matricula")
 
-alunoRadio.addEventListener("click", () => {
-  matriculaInput.type = "number"
-  matriculaInput.placeholder = "Matrícula"
-})
-
-coordenadorRadio.addEventListener("click", () => {
-  matriculaInput.type = "email"
-  matriculaInput.placeholder = "E-mail"
+formSignIn.addEventListener("click", (event) => {
+  if (event.target.type === "radio") {
+    if (event.target.id === "aluno") {
+      matriculaInput.type = "number"
+      matriculaInput.placeholder = "Matrícula"
+    } else if (event.target.id === "coordenador") {
+      matriculaInput.type = "email"
+      matriculaInput.placeholder = "E-mail"
+    }
+  }
 })
