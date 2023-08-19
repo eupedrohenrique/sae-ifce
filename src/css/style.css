@@ -22,6 +22,7 @@ body {
   background-color: #009e0f;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .header {
