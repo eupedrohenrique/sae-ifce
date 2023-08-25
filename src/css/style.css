@@ -29,6 +29,26 @@ body {
   text-align: center;
 }
 
+.header > .logo {
+  margin-top: 1.6rem;
+}
+
+.header img {
+  cursor: pointer;
+}
+
+.header > .title,
+.header > .subtitle {
+  transition: all 0.3s ease-in-out;
+}
+
+.header > .title:hover,
+.header > .subtitle:hover {
+  background: linear-gradient(to bottom, #8cc7bf, #ffffff);
+  -webkit-background-clip: text; /* Para navegadores baseados em Webkit (Safari, Chrome) */
+  color: transparent; /* Torna o texto transparente para mostrar o gradiente por trás */
+}
+
 .header > .title {
   font-size: 2.8rem;
   font-weight: 700;
