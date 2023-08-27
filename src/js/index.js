@@ -45,7 +45,10 @@ formSignIn.addEventListener("submit", (event) => {
       JSON.parse(localStorage.getItem("coordenadores")) || []
 
     if (coordenadores.includes(inputEmail)) {
-      // Email de coordenador encontrado, redirecionar para a página de acesso
+      // Armazena o email válido do coordenador no localStorage
+      localStorage.setItem("validCoordEmail", inputEmail)
+
+      // Redireciona para a página de acesso do coordenador
       window.location.href = "pagina_de_acesso_do_coordenador.html"
     } else {
       alert("Email inválido para coordenador.")
