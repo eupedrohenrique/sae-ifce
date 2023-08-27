@@ -26,8 +26,8 @@
       </header>
 
       <section>
-        <form id="form-sign-in">
-          <div class="inputs-radio-wrapper">
+        <form id="form-sign-in" class="flex">
+          <div class="inputs-radio-wrapper flex">
             <div class="input-wrapper">
               <input type="radio" name="user" id="aluno" checked />
               <label for="aluno">Aluno</label>
@@ -38,6 +38,7 @@
             </div>
           </div>
           <div class="input-matricula-wrapper">
+            <label for="matricula" class="hidden">Mátricula</label>
             <input
               type="number"
               name="matricula"

@@ -17,16 +17,31 @@ body * {
 }
 
 body {
+  background-color: #004940;
+}
+
+.hidden {
+  display: none;
+}
+
+#app {
   width: 100vw;
   height: 100vh;
-  background-color: #004940;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 3fr 0.5fr;
+  grid-template-areas: "header" "section" "footer";
+  place-content: center;
+}
+
+.flex {
   display: flex;
-  justify-content: center;
-  position: relative;
+  align-items: center;
 }
 
 .header {
   text-align: center;
+  grid-area: header;
 }
 
 .header > .logo {
@@ -35,53 +50,48 @@ body {
 
 .header img {
   cursor: pointer;
+  width: 200px;
+  height: 120px;
 }
 
 .header > .title,
 .header > .subtitle {
+  background: linear-gradient(to top, #8cc7bf, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   transition: all 0.3s ease-in-out;
 }
 
 .header > .title:hover,
 .header > .subtitle:hover {
   background: linear-gradient(to bottom, #8cc7bf, #ffffff);
-  -webkit-background-clip: text; /* Para navegadores baseados em Webkit (Safari, Chrome) */
-  color: transparent; /* Torna o texto transparente para mostrar o gradiente por trás */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .header > .title {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   font-weight: 700;
-  background: linear-gradient(to top, #8cc7bf, #ffffff);
-  -webkit-background-clip: text; /* Para navegadores baseados em Webkit (Safari, Chrome) */
-  color: transparent; /* Torna o texto transparente para mostrar o gradiente por trás */
 }
 
 .header > .subtitle {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 400;
-  background: linear-gradient(to top, #8cc7bf, #ffffff);
-  -webkit-background-clip: text; /* Para navegadores baseados em Webkit (Safari, Chrome) */
-  color: transparent; /* Torna o texto transparente para mostrar o gradiente por trás */
 }
 
 section {
-  margin-top: 2.4rem;
-}
-
-form#form-sign-in {
+  margin-top: 1rem;
+  grid-area: section;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 0.4rem;
 }
 
-form#form-registration {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: row;
+#form-sign-in,
+#form-registration {
+  flex-direction: column;
+  gap: 0.3rem;
 }
 
 input {
@@ -92,18 +102,20 @@ input:focus {
   background-color: #ccc;
 }
 
+.input-matricula-create-wrapper {
+  text-align: center;
+}
+
 .input-matricula-create-wrapper label {
   display: block;
 }
 
 #obrigatorio {
-  color: #ff0000;
+  color: #ca0000;
 }
 
 .inputs-radio-wrapper {
-  display: flex;
   gap: 3.2rem;
-  align-items: center;
 }
 
 .inputs-radio-wrapper .input-wrapper label,
@@ -124,10 +136,14 @@ input#matricula-create {
   text-align: center;
 }
 
-input#matricula::placeholder {
+input::placeholder {
   text-align: center;
   font-size: 1.2rem;
   color: #00000078;
+}
+
+input#matricula-create::placeholder {
+  font-size: 1rem;
 }
 
 button:hover {
@@ -143,61 +159,38 @@ button#btn-registration {
   font-size: 1.4rem;
   border-radius: 6px;
   transition: all 0.3s ease-in-out;
-}
-
-button#btn-sign-in {
   width: 283px;
 }
 
-button#btn-registration {
-  padding: 0 0.8rem;
-  position: relative;
-  top: 17px;
+.link-primeiro-acesso {
+  text-align: center;
 }
 
-.link-primeiro-acesso a {
+.link-voltar-index p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.link-primeiro-acesso a,
+.link-voltar-index a {
   color: #ccc;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
-.link-primeiro-acesso a:hover {
+.link-primeiro-acesso a:hover,
+.link-voltar-index a:hover {
   text-decoration: underline;
 }
 
 .footer {
-  position: absolute;
-  bottom: 0;
+  grid-area: footer;
   background-color: #333;
-  left: 50%;
-  transform: translateX(-50%);
   padding: 1rem;
-  width: 100%;
   text-align: center;
 }
 
 .footer p {
-  font-size: 1rem;
+  font-size: 0.7rem;
   font-weight: 400;
-}
-
-@media (max-width: 478px) {
-  .header > .subtitle.title.registration {
-    font-size: 1rem;
-  }
-
-  form#form-registration {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .input-matricula-create-wrapper label {
-    text-align: center;
-  }
-}
-
-@media (max-width: 388px) {
-  .header > .subtitle.title.registration {
-    font-size: 0.7rem;
-  }
 }

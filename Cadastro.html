@@ -30,7 +30,7 @@
       </header>
 
       <section>
-        <form id="form-registration">
+        <form id="form-registration" class="flex">
           <div class="input-matricula-create-wrapper">
             <label for="matricula-create"
               >Mátricula <span id="obrigatorio">*</span></label
@@ -40,10 +40,17 @@
               name="matricula-create"
               id="matricula-create"
               required
+              placeholder="Digite sua Mátricula"
             />
           </div>
           <div class="registration-wrapper">
             <button type="submit" id="btn-registration">Cadastrar</button>
+          </div>
+          <div class="link-voltar-index">
+            <p>
+              Já tem conta cadastrada?
+              <a href="./index.html">Clique aqui</a>
+            </p>
           </div>
         </form>
       </section>
