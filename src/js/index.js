@@ -12,3 +12,24 @@ formSignIn.addEventListener("click", (event) => {
     }
   }
 })
+
+formSignIn.addEventListener("submit", (event) => {
+  event.preventDefault()
+
+  const userType = document.querySelector("input[name='user']:checked").id
+  const matricula = matriculaInput.value
+
+  if (userType === "aluno") {
+    const db = JSON.parse(localStorage.getItem("alunos")) || []
+    const alunoEncontrado = db.find((aluno) => aluno.matricula === matricula)
+
+    if (alunoEncontrado) {
+      // Redirecionar para home.html se o aluno for encontrado
+      window.location.href = "home.html"
+    } else {
+      alert("Aluno não encontrado. Verifique a matrícula.")
+    }
+  } else if (userType === "coordenador") {
+    // Lógica para coordenador (não incluída no exemplo)
+  }
+})
