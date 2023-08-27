@@ -3,6 +3,13 @@ const form = document.getElementById("form-registration")
 const salvarMatriculaNoLocalStorage = (matricula) => {
   const db = JSON.parse(localStorage.getItem("alunos")) || []
 
+  // Verificar se a matrícula já está cadastrada
+  const matriculaExistente = db.find((aluno) => aluno.matricula === matricula)
+  if (matriculaExistente) {
+    alert("Essa matrícula já está cadastrada no sistema!")
+    return
+  }
+
   const aluno = {
     id: db.length + 1,
     matricula: matricula,
