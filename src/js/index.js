@@ -1,3 +1,13 @@
+// Isso garantirá que os emails de coordenadores estejam disponíveis no localStorage quando o usuário carregar a página
+document.addEventListener("DOMContentLoaded", () => {
+  const coordenadores = [
+    "jeffersongurguri@ifce.edu.br",
+    "paulovictor@ifce.edu.br",
+  ]
+
+  localStorage.setItem("coordenadores", JSON.stringify(coordenadores))
+})
+
 const formSignIn = document.getElementById("form-sign-in")
 const matriculaInput = document.getElementById("matricula")
 
@@ -18,6 +28,7 @@ formSignIn.addEventListener("submit", (event) => {
 
   const userType = document.querySelector("input[name='user']:checked").id
   const matricula = matriculaInput.value
+  const inputEmail = matriculaInput.value
 
   if (userType === "aluno") {
     const db = JSON.parse(localStorage.getItem("alunos")) || []
@@ -25,11 +36,19 @@ formSignIn.addEventListener("submit", (event) => {
 
     if (alunoEncontrado) {
       // Redirecionar para home.html se o aluno for encontrado
-      window.location.href = "home.html"
+      window.location.href = "pagina_de_acesso_do_aluno.html"
     } else {
       alert("Aluno não encontrado. Verifique a matrícula.")
     }
   } else if (userType === "coordenador") {
-    // Lógica para coordenador (não incluída no exemplo)
+    const coordenadores =
+      JSON.parse(localStorage.getItem("coordenadores")) || []
+
+    if (coordenadores.includes(inputEmail)) {
+      // Email de coordenador encontrado, redirecionar para a página de acesso
+      window.location.href = "pagina_de_acesso_do_coordenador.html"
+    } else {
+      alert("Email inválido para coordenador.")
+    }
   }
 })
