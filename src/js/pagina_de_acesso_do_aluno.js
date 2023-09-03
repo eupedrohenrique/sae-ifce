@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const welcomeMessageElement = document.querySelector(
       "#mensagem-boas-vindas"
     )
-    welcomeMessageElement.textContent = `Seja bem-vindo, ${alunoEncontrado.nome}!`
+    welcomeMessageElement.textContent = `Seja bem-vindo(a), ${alunoEncontrado.nome}!`
   } else {
     window.location.href = "index.html"
   }
