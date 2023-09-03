@@ -35,6 +35,9 @@ formSignIn.addEventListener("submit", (event) => {
     const alunoEncontrado = db.find((aluno) => aluno.matricula === matricula)
 
     if (alunoEncontrado) {
+      // Armazena o email válido do aluno no localStorage
+      localStorage.setItem("validAlunoMatricula", inputEmail)
+
       // Redirecionar para home.html se o aluno for encontrado
       window.location.href = "pagina_de_acesso_do_aluno.html"
     } else {
