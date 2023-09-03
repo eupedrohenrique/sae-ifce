@@ -1,6 +1,6 @@
 const form = document.getElementById("form-registration")
 
-const salvarMatriculaNoLocalStorage = (matricula) => {
+const salvarCadastroNoLocalStorage = (matricula, nome) => {
   const db = JSON.parse(localStorage.getItem("alunos")) || []
 
   // Verificar se a matrícula já está cadastrada
@@ -13,6 +13,7 @@ const salvarMatriculaNoLocalStorage = (matricula) => {
   const aluno = {
     id: db.length + 1,
     matricula: matricula,
+    nome: nome, // Salva o nome também
   }
 
   db.push(aluno)
@@ -26,18 +27,24 @@ form.addEventListener("submit", (event) => {
   event.preventDefault()
 
   const matricula = document.getElementById("matricula-create").value
+  const nome = document.getElementById("nome-create").value // Pega o valor do campo nome
 
   if (matricula.trim() === "") {
-    alert("Por favor digite sua mátricula para ser cadastrado no sistema!")
+    alert("Por favor, digite sua matrícula para ser cadastrado no sistema!")
     return
   }
 
   if (matricula.length < 7) {
     alert(
-      "Número de mátricula insuficiente, sua mátricula deve conter no mínimo 7 números!"
+      "Número de matrícula insuficiente, sua matrícula deve conter no mínimo 7 números!"
     )
     return
   }
 
-  salvarMatriculaNoLocalStorage(matricula)
+  if (nome.trim() === "") {
+    alert("Por favor, digite seu nome!")
+    return
+  }
+
+  salvarCadastroNoLocalStorage(matricula, nome)
 })
