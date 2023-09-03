@@ -1,0 +1,74 @@
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  padding: 1rem;
+  background-color: #004940;
+}
+
+.header img {
+  cursor: pointer;
+  width: 120px;
+  height: 70px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar div:first-child {
+  display: flex;
+  gap: 1rem;
+}
+
+.header .navbar .title {
+  display: inline;
+  background: linear-gradient(to top, #8cc7bf, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: all 0.3s ease-in-out;
+  font-weight: 700;
+}
+
+.header .navbar .title:hover {
+  background: linear-gradient(to bottom, #8cc7bf, #ffffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.header .navbar button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.header .navbar button * {
+  font-size: 2rem;
+}
+
+section {
+  padding: 2.4rem;
+  text-align: center;
+}
+
+section #mensagem-boas-vindas {
+  color: #004940;
+  font-weight: 700;
+}
+
+footer {
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .header .navbar .title {
+    font-size: 1.3rem;
+  }
+}

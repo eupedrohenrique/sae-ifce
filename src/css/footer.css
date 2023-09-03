@@ -1,0 +1,13 @@
+.footer {
+  grid-area: footer;
+  background-color: #333;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer p {
+  font-size: 0.7rem;
+  font-weight: 400;
+}
