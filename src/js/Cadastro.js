@@ -3,7 +3,6 @@ const form = document.getElementById("form-registration")
 const salvarCadastroNoLocalStorage = (matricula, nome) => {
   const db = JSON.parse(localStorage.getItem("alunos")) || []
 
-  // Verificar se a matrícula já está cadastrada
   const matriculaExistente = db.find((aluno) => aluno.matricula === matricula)
   if (matriculaExistente) {
     alert("Essa matrícula já está cadastrada no sistema!")
@@ -13,7 +12,7 @@ const salvarCadastroNoLocalStorage = (matricula, nome) => {
   const aluno = {
     id: db.length + 1,
     matricula: matricula,
-    nome: nome, // Salva o nome também
+    nome: nome,
   }
 
   db.push(aluno)
@@ -26,8 +25,8 @@ const salvarCadastroNoLocalStorage = (matricula, nome) => {
 form.addEventListener("submit", (event) => {
   event.preventDefault()
 
-  const matricula = document.getElementById("matricula-create").value
-  const nome = document.getElementById("nome-create").value // Pega o valor do campo nome
+  const matricula = document.getElementById("matricula").value
+  const nome = document.getElementById("nome").value
 
   if (matricula.trim() === "") {
     alert("Por favor, digite sua matrícula para ser cadastrado no sistema!")

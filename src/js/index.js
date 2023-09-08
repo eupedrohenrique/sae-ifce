@@ -1,4 +1,3 @@
-// Isso garantirá que os emails de coordenadores estejam disponíveis no localStorage quando o usuário carregar a página
 document.addEventListener("DOMContentLoaded", () => {
   const coordenadores = [
     "jeffersongurguri@ifce.edu.br",
@@ -35,10 +34,7 @@ formSignIn.addEventListener("submit", (event) => {
     const alunoEncontrado = db.find((aluno) => aluno.matricula === matricula)
 
     if (alunoEncontrado) {
-      // Armazena o email válido do aluno no localStorage
       localStorage.setItem("validAlunoMatricula", inputEmail)
-
-      // Redirecionar para home.html se o aluno for encontrado
       window.location.href = "pagina_de_acesso_do_aluno.html"
     } else {
       alert("Aluno não encontrado. Verifique a matrícula.")
@@ -48,10 +44,7 @@ formSignIn.addEventListener("submit", (event) => {
       JSON.parse(localStorage.getItem("coordenadores")) || []
 
     if (coordenadores.includes(inputEmail)) {
-      // Armazena o email válido do coordenador no localStorage
       localStorage.setItem("validCoordEmail", inputEmail)
-
-      // Redireciona para a página de acesso do coordenador
       window.location.href = "pagina_de_acesso_do_coordenador.html"
     } else {
       alert("Email inválido para coordenador.")

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SAE | Cadastro</title>
+    <title>SAE Comércio | Cadastro</title>
 
     <!-- Favicon -->
     <link
@@ -13,9 +13,7 @@
     />
 
     <!-- Estilo -->
-    <link rel="stylesheet" href="./src/css/styles.css" />
-    <link rel="stylesheet" href="./src/css/reset.css" />
-    <link rel="stylesheet" href="./src/css/footer.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
 
     <!-- Fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,42 +29,40 @@
         <div class="logo">
           <img src="./src/img/logo-ifce.png" alt="Logo do IFCE" />
         </div>
-        <h1 class="title">Portal do Comércio do IFCE Campus Baturité</h1>
-        <h2 class="subtitle">
+        <h1 class="text">Portal do Comércio do IFCE Campus Baturité</h1>
+        <p class="text">
           Informe a sua matrícula para ser cadastrado no sistema para que
           possamos completar seu cadastro.
-        </h2>
+        </p>
       </header>
 
       <section>
         <form id="form-registration" class="flex">
-          <div class="input-nome-create-wrapper">
-            <label for="nome-create" class="hidden"
-              >Nome <span id="obrigatorio">*</span></label
-            >
+          <div class="input-wrapper">
+            <label for="nome" class="hidden">Nome</label>
             <input
               type="text"
-              name="nome-create"
-              id="nome-create"
+              name="nome"
+              id="nome"
               placeholder="Digite seu Nome"
+              class="input-text"
             />
           </div>
 
-          <div class="input-matricula-create-wrapper">
-            <label for="matricula-create" class="hidden"
-              >Mátricula <span id="obrigatorio">*</span></label
-            >
+          <div class="input-wrapper">
+            <label for="matricula" class="hidden">Mátricula</label>
             <input
               type="number"
-              name="matricula-create"
-              id="matricula-create"
+              name="matricula"
+              id="matricula"
               placeholder="Digite sua Mátricula"
+              class="input-text"
             />
           </div>
-          <div class="registration-wrapper">
-            <button type="submit" id="btn-registration">Cadastrar</button>
+          <div class="btn-wrapper">
+            <button type="submit" class="btn">Cadastrar</button>
           </div>
-          <div class="link-voltar-index">
+          <div class="link">
             <p>
               Já tem conta cadastrada?
               <a href="index.html">Clique aqui</a>

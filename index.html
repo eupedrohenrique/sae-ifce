@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SAE | Login</title>
+    <title>SAE Comércio | Login</title>
 
     <!-- Favicon -->
     <link
@@ -13,9 +13,7 @@
     />
 
     <!-- Estilo -->
-    <link rel="stylesheet" href="./src/css/styles.css" />
-    <link rel="stylesheet" href="./src/css/reset.css" />
-    <link rel="stylesheet" href="./src/css/footer.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
 
     <!-- Fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,34 +29,35 @@
         <div class="logo">
           <img src="./src/img/logo-ifce.png" alt="Logo do IFCE" />
         </div>
-        <h1 class="title">Portal do Comércio do IFCE Campus Baturité</h1>
+        <h1 class="text">Portal do Comércio do IFCE Campus Baturité</h1>
       </header>
 
       <section>
         <form id="form-sign-in" class="flex">
           <div class="inputs-radio-wrapper flex">
-            <div class="input-wrapper">
+            <div>
               <input type="radio" name="user" id="aluno" checked />
               <label for="aluno">Aluno</label>
             </div>
-            <div class="input-wrapper">
+            <div>
               <input type="radio" name="user" id="coordenador" />
               <label for="coordenador">Coordenador</label>
             </div>
           </div>
-          <div class="input-matricula-wrapper">
+          <div class="input-wrapper">
             <label for="matricula" class="hidden">Mátricula</label>
             <input
               type="number"
               name="matricula"
               id="matricula"
               placeholder="Mátricula"
+              class="input-text"
             />
           </div>
-          <div class="button-sign-in-wrapper">
-            <button type="submit" id="btn-sign-in">Entrar</button>
+          <div class="btn-wrapper">
+            <button type="submit" class="btn">Entrar</button>
           </div>
-          <div class="link-primeiro-acesso">
+          <div class="link">
             <a href="Cadastro.html">Primeiro acesso</a>
           </div>
         </form>
