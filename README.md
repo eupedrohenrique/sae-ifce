@@ -14,6 +14,7 @@
 
 - React
 - Styled-Components
+- React Router
 
 ## 💻 Pré-requisitos
 

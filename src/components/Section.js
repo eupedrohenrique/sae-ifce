@@ -64,6 +64,10 @@ const InputText = styled.input`
 
   @media (min-width: 1400px) {
     font-size: 2rem;
+
+    &::placeholder {
+      font-size: 2rem;
+    }
   }
 `
 
