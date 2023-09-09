@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import Header from "./Header"
-import Section from "./Section"
-import Footer from "./Footer"
+import Header from "../components/Header"
+import { SectionLogin } from "../components/Section"
+import Footer from "../components/Footer"
 
 const LoginPageContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.bg};
@@ -20,7 +20,7 @@ function LoginPage() {
     <div>
       <LoginPageContainer>
         <Header />
-        <Section />
+        <SectionLogin showInputsRadio={true} />
         <Footer />
       </LoginPageContainer>
     </div>

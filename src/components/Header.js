@@ -31,7 +31,6 @@ const Title = styled.h1`
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  transition: all 0.3s ease-in-out;
   font-family: ${({ theme }) => theme.fonts.primary};
 
   @media (max-width: 488px) {
@@ -43,7 +42,19 @@ const Title = styled.h1`
   }
 `
 
-function Header() {
+const Subtitle = styled.p`
+  background: linear-gradient(
+    to top,
+    ${({ theme }) => theme.colors.text},
+    #ffffff
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: ${({ theme }) => theme.fonts.primary};
+`
+
+function Header({ showText = false }) {
   return (
     <HeaderContainer>
       <LogoContainer>
@@ -53,6 +64,12 @@ function Header() {
         />
       </LogoContainer>
       <Title>Portal do Comércio do IFCE Campus Baturité</Title>
+      {showText && (
+        <Subtitle>
+          Informe a sua matrícula para ser cadastrado no sistema para que
+          possamos completar seu cadastro.
+        </Subtitle>
+      )}
     </HeaderContainer>
   )
 }

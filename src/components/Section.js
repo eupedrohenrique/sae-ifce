@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "react-router-dom"
 
 const SectionContainer = styled.section`
   grid-area: section;
@@ -96,10 +97,17 @@ const Btn = styled.button`
   }
 `
 
-const Link = styled.a`
-  color: #cccccc;
+const Text = styled.p`
+  color: ${({ theme }) => theme.colors.link};
+  font-family: ${({ theme }) => theme.fonts.primary};
+  font-size: 1rem;
+`
+
+const StyledLink = styled(Link)`
+  color: ${({ theme }) => theme.colors.link};
   text-decoration: none;
   font-family: ${({ theme }) => theme.fonts.primary};
+  font-size: 1rem;
 
   &:hover {
     text-decoration: underline;
@@ -110,21 +118,24 @@ const Link = styled.a`
   }
 `
 
-function Section() {
+export function SectionLogin() {
   return (
     <SectionContainer>
       <Form>
         <InputsRadioWrapper>
           <div>
-            <input type="radio" name="user" id="aluno" />
-            <Label>Aluno</Label>
+            <input type="radio" name="user" id="aluno" defaultChecked />
+            <Label htmlFor="aluno">Aluno</Label>
           </div>
           <div>
             <input type="radio" name="user" id="coordenador" />
-            <Label>Coordenador</Label>
+            <Label htmlFor="coordenador">Coordenador</Label>
           </div>
         </InputsRadioWrapper>
         <InputWrapper>
+          <label htmlFor="matricula" className="hidden">
+            Mátricula
+          </label>
           <InputText
             type="number"
             name="matricula"
@@ -136,11 +147,48 @@ function Section() {
           <Btn type="submit">Entrar</Btn>
         </BtnWrapper>
         <div>
-          <Link href="#">Primeiro acesso</Link>
+          <StyledLink to="/cadastro">Primeiro acesso</StyledLink>
         </div>
       </Form>
     </SectionContainer>
   )
 }
 
-export default Section
+export function SectionCadastro() {
+  return (
+    <SectionContainer>
+      <Form>
+        <InputWrapper>
+          <label htmlFor="nome" className="hidden">
+            Nome
+          </label>
+          <InputText
+            type="text"
+            name="nome"
+            id="nome"
+            placeholder="Digite seu Nome"
+          />
+        </InputWrapper>
+        <InputWrapper>
+          <label htmlFor="matricula" className="hidden">
+            Mátricula
+          </label>
+          <InputText
+            type="number"
+            name="matricula"
+            id="matricula"
+            placeholder="Mátricula"
+          />
+        </InputWrapper>
+        <BtnWrapper>
+          <Btn type="submit">Cadastrar</Btn>
+        </BtnWrapper>
+        <div>
+          <Text>
+            Já tem uma conta ? <StyledLink to="/">Clique aqui</StyledLink>
+          </Text>
+        </div>
+      </Form>
+    </SectionContainer>
+  )
+}
