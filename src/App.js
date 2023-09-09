@@ -1,10 +1,13 @@
-import LoginPage from "./components/LoginPage"
+import React from "react"
+import { ThemeProvider } from "styled-components"
+import theme from "./theme"
+import AppRouter from "./routers/AppRouter"
 
 function App() {
   return (
-    <>
-      <LoginPage />
-    </>
+    <ThemeProvider theme={theme}>
+      <AppRouter />
+    </ThemeProvider>
   )
 }
 
