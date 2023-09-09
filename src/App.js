@@ -1,8 +1,10 @@
+import LoginPage from "./components/LoginPage"
+
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
-    </div>
+    <>
+      <LoginPage />
+    </>
   )
 }
 
