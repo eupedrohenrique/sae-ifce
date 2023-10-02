@@ -21,15 +21,13 @@ const FooterParagraph = styled.p`
   }
 `
 
-function Footer() {
+export function Footer() {
   return (
     <FooterContainer>
       <FooterParagraph>
         © 2023 IFCE - Instituto Federal de Educação, Ciência e Tecnologia do
-        Ceará
+        Ceará Campus Baturité
       </FooterParagraph>
     </FooterContainer>
   )
 }
-
-export default Footer

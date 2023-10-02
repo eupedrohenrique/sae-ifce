@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import Logo from "../img/logo-ifce.png"
 
 const Img = styled.img`
   width: 200px;
@@ -54,14 +55,11 @@ const Subtitle = styled.p`
   font-family: ${({ theme }) => theme.fonts.primary};
 `
 
-function Header({ showText = false }) {
+export function Header({ showText = false }) {
   return (
     <HeaderContainer>
       <LogoContainer>
-        <Img
-          src="https://i.ibb.co/X8g7JzH/logo-ifce.png"
-          alt="Imagem do IFCE"
-        />
+        <Img src={Logo} alt="Logo do IFCE" />
       </LogoContainer>
       <Title>Portal do Comércio do IFCE Campus Baturité</Title>
       {showText && (
@@ -73,5 +71,3 @@ function Header({ showText = false }) {
     </HeaderContainer>
   )
 }
-
-export default Header
